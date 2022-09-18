@@ -1,0 +1,22 @@
+{
+    "Logging": {
+        "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    {{- with secret "secret/data/api" -}}
+    "ALPACA_KEY_ID": "{{ .Data.data.ALPACA_KEY_ID }}",
+    "ALPACA_SECRET": "{{ .Data.data.ALPACA_SECRET }}",
+    "test": "{{ .Data.data.test }}",
+    {{- end }}
+    {{- with secret "gcp/token/api_role" -}}
+    "GCP_ACCESS_TOKEN": "{{ .Data.token }}",
+    {{- end }}
+    {{- with secret "databases/creds/postgres_api_role" -}}
+    "ConnectionStrings": {
+        "Database": "Host=api-db:5432; Database=api-db; Username={{ .Data.username }}; Password={{ .Data.password }}"
+    },
+    {{- end }}
+    "AllowedHosts": "*"
+}

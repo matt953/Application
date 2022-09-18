@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  api-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: root
+      POSTGRES_DB: api-db
+    ports:
+      - "5432:5432"
+
+  vault:
+      image: vault
+      restart: always
+      command: [ 'vault', 'server', '-dev', '-dev-listen-address=0.0.0.0:8200']
+      environment:
+        VAULT_DEV_ROOT_TOKEN_ID: "dev"
+      ports:
+        - "8200:8200"
+      cap_add:
+        - IPC_LOCK
+      depends_on:
+        - "api-db"
+
+networks:
+  default:
+    driver: bridge
+    name: starlight_network

@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  api:
+    image: mattdock1/holomaps-api
+    environment:
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - GCP_PROJECT_NUMBER=386676678376
+      - GCP_PROJECT_ID=starlight-350805
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=dark20
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+      - "80:80"
+    depends_on:
+      - vault-agent
+    restart: always
+    volumes:
+      - C:/Users/mattm/.aspnet/https:/https/
+      - ./vault/secrets/appsettings.json:/vault/secrets/appsettings.json
+      # - /Users/matthew/.aspnet/https:/https/
+
+  vault-agent:
+    image: vault
+    restart: always
+    command: [ 'vault', 'agent', '-config=/vault/API/vault-agent/config-vault-agent-template.hcl']
+    volumes:
+      - ./:/vault/API:rw
+    cap_add:
+      - IPC_LOCK
+
+networks:
+  default:
+    name: starlight_network
+    external: true
