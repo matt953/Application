@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+WORKDIR /app
+
+COPY ["efbundle", "."]
+
+CMD ["./efbundle"]

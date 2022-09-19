@@ -32,3 +32,6 @@ C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\Npgsql.dll
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Debug\net6.0\vault\secrets\appsettings.migration.json

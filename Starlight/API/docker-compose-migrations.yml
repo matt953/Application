@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  migrations:
+    image: mattdock1/api-migration
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+    build:
+      context: .
+      dockerfile: Dockerfile.migrations
+    depends_on:
+      - vault-agent
+    volumes:
+      - ./vault/secrets/appsettings.migration.json:/app/vault/secrets/appsettings.json
+
+  vault-agent:
+    image: vault
+    restart: always
+    command: [ 'vault', 'agent', '-config=/vault/API/vault-agent/config-vault-agent-template-migration.hcl']
+    volumes:
+      - ./:/vault/API:rw
+    cap_add:
+      - IPC_LOCK
+
+networks:
+  default:
+    name: starlight_network
+    external: true
