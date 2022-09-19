@@ -2,7 +2,6 @@ bin/
 obj/
 vault-agent/token
 vault-agent/token-migrations
-vault/
 .vs/
 **/bin
 
