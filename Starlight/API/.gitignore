@@ -1,6 +1,7 @@
 bin/
 obj/
-vault-agent/
+vault-agent/token
+vault-agent/token-migrations
 vault/
 .vs/
 **/bin
