@@ -1,14 +1,7 @@
 {
-    "Logging": {
-        "LogLevel": {
-        "Default": "Information",
-        "Microsoft.AspNetCore": "Warning"
-        }
-    },
     {{- with secret "databases/creds/postgres_api_migration" -}}
     "ConnectionStrings": {
         "Database": "Host=api-db:5432; Database=api-db; Username={{ .Data.username }}; Password={{ .Data.password }}"
-    },
+    }
     {{- end }}
-    "AllowedHosts": "*"
 }

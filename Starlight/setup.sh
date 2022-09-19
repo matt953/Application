@@ -8,5 +8,7 @@ terraform apply -auto-approve
 
 cd ../../../Application/Starlight
 
+docker-compose -f API/docker-compose-migrations.yml up -d
+
 docker-compose -f API/docker-compose.yml up -d
 

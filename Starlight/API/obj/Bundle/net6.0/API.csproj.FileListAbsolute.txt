@@ -34,3 +34,4 @@ C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\obj\Bundle\net6.
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\obj\Bundle\net6.0\API.pdb
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\obj\Bundle\net6.0\API.genruntimeconfig.cache
 C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\obj\Bundle\net6.0\ref\API.dll
+C:\Users\mattm\source\repos\Starlight\Application\Starlight\API\bin\Bundle\net6.0\vault\secrets\appsettings.migration.json

@@ -1,0 +1,9 @@
+bin/
+obj/
+vault-agent/
+vault/
+.vs/
+**/bin
+
+**/obj
+**/bundle

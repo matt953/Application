@@ -16,17 +16,7 @@ builder.Services.AddControllers().AddJsonOptions(opts =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-if (builder.Environment.IsDevelopment())
-{
-    builder.Configuration.AddJsonFile(builder.Environment.ContentRootPath + "/vault/secrets/appsettings.json", optional: false, reloadOnChange: true);
-}
-else
-{
-    builder.Configuration.AddJsonFile("/vault/secrets/appsettings.json", optional: false, reloadOnChange: true);
-}
-
-
-Console.WriteLine(builder.Configuration.GetSection("ConnectionStrings")["Database"]);
+builder.Configuration.AddJsonFile(builder.Environment.ContentRootPath + "/vault/secrets/appsettings.json", optional: false, reloadOnChange: true);
 
 builder.Services.AddDbContext<DataContext>(opt =>
           opt.UseNpgsql(builder.Configuration.GetSection("ConnectionStrings")["Database"]));

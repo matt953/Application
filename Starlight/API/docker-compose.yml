@@ -21,7 +21,7 @@ services:
     restart: always
     volumes:
       - C:/Users/mattm/.aspnet/https:/https/
-      - ./vault/secrets/appsettings.json:/vault/secrets/appsettings.json
+      - ./vault/secrets/appsettings.json:/app/vault/secrets/appsettings.json
       # - /Users/matthew/.aspnet/https:/https/
 
   vault-agent:

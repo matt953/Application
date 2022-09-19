@@ -8,8 +8,8 @@ auto_auth {
   method {
     type = "approle"
     config = {
-      role_id_file_path                   = "/vault/API/vault-agent/role-id"
-      secret_id_file_path                 = "/vault/API/vault-agent/secret-id"
+      role_id_file_path                   = "/vault/API/vault-agent/role-id-migrations"
+      secret_id_file_path                 = "/vault/API/vault-agent/secret-id-migrations"
       remove_secret_id_file_after_reading = false
     }
   }
@@ -18,7 +18,7 @@ auto_auth {
     type = "file"
 
     config = {
-      path = "/vault/API/vault-agent/token"
+      path = "/vault/API/vault-agent/token-migrations"
     }
   }
 }
